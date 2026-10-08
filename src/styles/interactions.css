@@ -1,0 +1,23 @@
+/* Motion amplitudes reuse the spacing scale: circle 12px, square 8px, rule 4px.
+   Sheets reveal 48px; the 128px top offset clears the existing desktop header.
+   These are interaction tokens, not changes to module dimensions or spacing. */
+.project-list { --stack-top: var(--space-32); --stack-step: var(--space-12); }
+.preview-cursor { display: none; }
+@media (min-width: 80rem) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-list--stack { position: relative; isolation: isolate; }
+  .project-list--stack > .reveal { position: sticky; top: calc(var(--stack-header) + var(--sheet-index) * var(--space-12)); z-index: calc(1 + var(--sheet-index)); background: var(--color-canvas); animation: none; }
+  /* Keyboard focus must not remain underneath a later sheet. */
+  .project-list--stack:focus-within > .reveal { position: relative; top: auto; }
+}
+@media (min-width: 80rem) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero .hero-plane { transform: translate(calc(var(--pointer-x, 0) * var(--space-2)), calc(var(--pointer-y, 0) * var(--space-2))); }
+  .hero-square { transform: translate(calc(var(--pointer-x, 0) * var(--space-1) / 2), calc(var(--pointer-y, 0) * var(--space-1) / 2)); transition: transform var(--motion-slow) var(--motion-ease); }
+  .hero-bottom { position: relative; border-bottom-color: transparent; }
+  .hero-bottom::after { content: ''; position: absolute; inset-inline: 0; bottom: -1px; border-top: var(--rule-strong); transform: translate(calc(var(--pointer-x, 0) * var(--space-1) / 2), calc(var(--pointer-y, 0) * var(--space-1) / 2)); transition: transform var(--motion-slow) var(--motion-ease); }
+  .selected-work { position: relative; z-index: 1; background: var(--color-canvas); }
+  [data-cursor-active] { cursor: none; }
+  [data-cursor-active] button, [data-cursor-active] a { cursor: pointer; }
+  .preview-cursor { display: block; position: fixed; top: 0; left: 0; width: var(--space-24); height: var(--space-24); pointer-events: none; z-index: 10; transform: translate(calc(var(--cursor-x, 0px) - 50%), calc(var(--cursor-y, 0px) - 50%)); }
+  .preview-cursor-label { display: grid; place-items: center; width: 100%; height: 100%; padding: var(--space-3); border-radius: 50%; background: var(--color-ink); color: var(--color-canvas); font-size: var(--text-label); line-height: var(--leading-label); text-align: center; opacity: 0; transform: scale(0); transition: opacity var(--motion-fast) var(--motion-ease), transform var(--motion-fast) var(--motion-ease); }
+  .preview-cursor--visible .preview-cursor-label { opacity: 1; transform: scale(1); }
+}

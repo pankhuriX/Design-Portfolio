@@ -1,0 +1,46 @@
+/* Section-scoped editorial modules, using the existing portfolio grid and tokens. */
+.experiments-intro { margin-block-start: var(--space-6); display: grid; gap: var(--space-6); }
+.experiments-intro p { max-width: var(--reading-max); }
+.experiments-features { display: grid; gap: var(--space-16); margin-block-start: var(--space-12); }
+.experiment-feature { --experiment-accent: var(--color-yellow); display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); gap: var(--space-8) var(--grid-gap); align-items: center; }
+.experiment-feature--red { --experiment-accent: var(--color-red); }
+.experiment-feature--blue { --experiment-accent: var(--color-blue); }
+.experiment-copy { grid-column: 1 / -1; min-width: 0; display: grid; gap: var(--space-6); }
+.experiment-copy h3 { font-size: var(--text-h2); line-height: var(--leading-h2); letter-spacing: var(--tracking-h2); }
+.experiment-subtitle { margin-block-start: var(--space-2); font-size: var(--text-body-lg); }
+.experiment-metadata { font-size: var(--text-label); line-height: var(--leading-label); }
+.experiment-play { font-size: var(--text-label); font-weight: var(--weight-heading); letter-spacing: var(--tracking-label); }
+.experiment-play span:first-child { transform: none; }
+.experiment-link-hint { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.experiment-feature .experiment-preview { grid-column: 1 / -1; min-width: 0; height: auto; min-height: var(--placeholder-height); padding: 0; background: var(--experiment-accent); border-bottom: var(--rule-strong); }
+.experiment-feature .experiment-preview > img, .experiment-feature .experiment-preview > .project-video { aspect-ratio: var(--project-media-ratio); object-fit: contain; }
+.word-game-preview { padding: var(--space-6); display: grid; gap: var(--space-8); width: 100%; }
+.word-game-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); border-bottom: var(--rule-strong); padding-block-end: var(--space-4); }
+.word-game-tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-2); width: 100%; max-width: calc(var(--space-24) * 4); margin-inline: auto; }
+.word-game-tile { display: grid; place-items: center; aspect-ratio: 1; border: var(--rule-strong); background: var(--color-canvas); color: var(--color-ink); font-size: var(--text-h3); font-weight: var(--weight-heading); }
+.word-game-tile--revealed { background: var(--color-ink); color: var(--color-canvas); }
+.word-game-keyboard { display: grid; gap: var(--space-1); }
+.word-game-key-row { display: flex; justify-content: center; gap: var(--space-1); }
+.word-game-key-row span { display: grid; place-items: center; width: var(--space-8); height: var(--space-8); border-bottom: var(--rule-strong); font-size: var(--text-label); }
+@media (min-width: 48rem) {
+  .experiment-copy { grid-column: 1 / 4; }
+  .experiment-feature .experiment-preview { grid-column: 4 / -1; }
+  .experiment-copy h3 { overflow-wrap: anywhere; }
+  .word-game-preview { padding: var(--space-8); }
+}
+@media (min-width: 80rem) {
+  .experiments-intro { grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: end; }
+  .experiments-intro h2 { grid-column: 1 / 6; }
+  .experiments-intro p { grid-column: 7 / -1; }
+  .experiment-copy { grid-column: 1 / 5; }
+  .experiment-feature .experiment-preview { grid-column: 6 / -1; }
+  .word-game-preview { padding: var(--space-12); gap: var(--space-12); }
+}
+@keyframes word-tile-reveal { from { opacity: 0; transform: translateY(var(--space-2)); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .experiment-reveal.reveal--entered .word-game-tile { animation: word-tile-reveal var(--motion-slow) var(--motion-ease) both; animation-delay: calc(var(--tile-index) * var(--motion-fast)); }
+  .word-game-tiles { transition: transform var(--motion-standard) var(--motion-ease); }
+  @media (hover: hover) and (pointer: fine) {
+    .experiment-feature:hover .word-game-tiles { transform: translateY(calc(-1 * var(--space-1))); }
+  }
+}
