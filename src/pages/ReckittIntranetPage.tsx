@@ -64,9 +64,11 @@ export function ReckittIntranetPage() {
         </CaseChapter>
         <CaseChapter number="03.3" label="Design decision" decision title="Build a reusable system, not another collection of pages.">
           <div className="case-reading case-prose"><p>The Salesforce rebuild required a consistent interaction system that could scale across roles and product areas: reusable cards, navigation, alerts, actions, spacing rules, and content groupings.</p><p className="case-tradeoff">Selected legacy patterns were preserved where familiarity or technical continuity mattered, while patterns causing navigation or comprehension issues were replaced.</p></div>
+          <CaseImage root={root} file="Components.png" alt="Reusable Sales Intranet components: an order-progress indicator, product and document cards, stock feedback, an empty-cart state, and editable forecast rows." caption="Reusable components and states across ordering, content, stock, and forecasting." width={2164} height={1692} />
         </CaseChapter>
         <CaseChapter number="03.4" label="Design decision" decision title="Show errors where users can act on them.">
           <div className="case-reading case-prose"><p>Field-level validation, inline feedback, and real-time alerts helped users resolve issues during a workflow instead of encountering uncertainty after submission.</p></div>
+          <CaseImage root={root} file="Error validation.png" alt="Forecast entry form with a prominent notice requiring 45 days of advance notice, above customer, forecast, ship date, and allocation fields." caption="Forecasting requirements surfaced within the form, before submission." width={2280} height={854} />
         </CaseChapter>
       </CaseChapter>
       <CaseChapter id="final-experience" number="04" label="Interaction" title="From structure to final interface.">

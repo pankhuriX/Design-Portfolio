@@ -23,8 +23,10 @@ All assets are under `public/images/reckitt-intranet/`.
 | Launchpad.png | Comparison wireframe, top-aligned crop with full-image link |
 | Ongoing image.png | Ongoing Orders (the available equivalent of the brief's 1st Image.png) |
 | Forecast.png | Forecasting |
+| Components.png | Decision 03.3: reusable components and states |
+| Error validation.png | Decision 03.4: forecasting notice within the entry form |
 
-No dedicated component-system image or full-length final Launchpad export was found. The system/feedback decisions remain concise text-led sections. The comparison is explicitly labeled as the Launchpad upper section; layouts evolved, so it is not a pixel-identical before/after. No images were generated or recolored.
+The supplied Components.png now illustrates the reusable-system decision. The corrected Error validation.png illustrates the feedback decision, showing the forecasting notice above the entry fields. No full-length final Launchpad export was found. The comparison is explicitly labeled as the Launchpad upper section; layouts evolved, so it is not a pixel-identical before/after. No images were generated or recolored.
 
 ## Shared components and responsive behavior
 
