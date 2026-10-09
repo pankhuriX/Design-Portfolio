@@ -13,6 +13,8 @@ const metadata = [
 export function ReckittAdminPage() {
   return <div className="reckitt-case"><PageShell><PageContainer>
     <header className="case-hero">
+      <span className="case-hero-orbit" aria-hidden="true" />
+      <span className="case-hero-square" aria-hidden="true" />
       <p className="number-label case-label">CASE STUDY — 01</p>
       <h1>Simplifying Reckitt’s<br />Admin Portal</h1>
       <p className="case-subtitle">Redesigning high-risk administrative workflows so power users could make complex updates with greater clarity and confidence.</p>

@@ -55,3 +55,5 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-plane, .arrow-link span, .project-media img, .experiment-preview { transform: none !important; }
 }
+
+.footer-colophon { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4) var(--space-8); margin-block-start: var(--space-12); font-size: var(--text-label); line-height: var(--leading-body); }

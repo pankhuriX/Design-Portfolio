@@ -1,0 +1,21 @@
+/* Reuses the established case-study scale; all additions are intranet/component scoped. */
+.intranet-outcomes { display: grid; gap: var(--space-8) var(--grid-gap); margin: var(--space-12) 0; }
+.intranet-outcomes dt { font-size: var(--text-h3); font-weight: var(--weight-label); line-height: var(--leading-h3); }
+.intranet-outcomes dd { margin: var(--space-3) 0 0; }
+.intranet-quote-author { display: block; font-size: var(--text-label); font-style: normal; margin-block-start: var(--space-4); }
+.intranet-workflow { margin-block-start: var(--space-16); }
+.comparison-labels, .comparison-links { display: flex; justify-content: space-between; gap: var(--space-4); }
+.comparison-labels { margin-block-end: var(--space-3); }
+.comparison-frame { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--color-surface); }
+.comparison-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.comparison-frame .comparison-before { clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0); }
+.comparison-divider { position: absolute; top: 0; bottom: 0; left: var(--comparison-position); width: var(--touch-target); transform: translateX(-50%); display: grid; place-items: center; cursor: ew-resize; touch-action: none; }
+.comparison-divider::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; border-inline-start: var(--rule-strong); }
+.comparison-divider > span { z-index: 1; display: grid; place-items: center; width: var(--touch-target); height: var(--touch-target); background: var(--color-ink); color: var(--color-canvas); }
+.comparison-control { display: grid; gap: var(--space-2); margin-block-start: var(--space-4); }
+.comparison-control input { width: 100%; margin: 0; min-height: var(--touch-target); accent-color: var(--case-accent); cursor: ew-resize; }
+.image-comparison:focus-within .comparison-frame { outline: var(--rule-focus); outline-offset: var(--space-1); }
+.image-comparison figcaption { margin-block-start: var(--space-2); font-size: var(--text-label); color: var(--color-text-muted); }
+.comparison-links { margin-block-start: var(--space-3); font-size: var(--text-label); }
+@media (min-width: 48rem) { .intranet-outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.image-comparison { margin-inline: 0; }

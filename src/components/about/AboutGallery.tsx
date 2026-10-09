@@ -15,7 +15,7 @@ export function GalleryItem({ item, index }: { item: GalleryImage; index: number
 export function AboutGallery() {
   return <section id="outside-the-frame" className="section outside-frame" aria-labelledby="outside-title"><PageContainer>
     <NumberLabel number="03">Outside the frame</NumberLabel>
-    <div className="gallery-intro"><h2 id="outside-title">WHAT KEEPS ME CURIOUS</h2><p className="muted">Research, making, travel, games, and small moments that shape how I think.</p></div>
+    <div className="gallery-intro"><h2 id="outside-title">WHAT KEEPS ME CURIOUS</h2><p className="muted">Research, travel, creativity, games, and quiet moments that shape how I think.</p></div>
     <div className="about-gallery">{gallery.map((item, index) => <GalleryItem key={item.id} item={item} index={index} />)}</div>
     <SystemPrinciples />
   </PageContainer></section>;

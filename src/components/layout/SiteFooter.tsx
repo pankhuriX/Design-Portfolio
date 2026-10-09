@@ -6,5 +6,6 @@ export function SiteFooter() {
       <a className="arrow-link" href="mailto:ppankhuri.verma21@gmail.com">ppankhuri.verma21@gmail.com <span aria-hidden="true">↗</span></a>
       <a className="arrow-link" href="https://www.linkedin.com/in/pankhuri-verma-503498185/">LinkedIn <span aria-hidden="true">↗</span></a>
     </div></div>
+    <div className="footer-colophon"><p>© 2026 Pankhuri Verma</p><p>Designed and built from scratch — with curiosity and a lot of iterations.</p></div>
   </PageContainer></footer>;
 }

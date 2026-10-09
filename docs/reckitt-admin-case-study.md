@@ -82,3 +82,11 @@ Validation: 1280px hero renders as two lines and Outcome as one; metrics share a
 Only `src/styles/case-study.css`, `src/pages/ReckittAdminPage.tsx`, and this document change in this pass. Hero intro/tags gaps tighten from 32px to 24px and cover lead-in from 64px to 48px; image dimensions are unchanged. Labels use a scoped 11px token (requested 11–12px range), existing medium weight/micro tracking, and a 55% project-magenta mix with existing muted text for quieter emphasis without reduced opacity. Major type sizes remain as approved. Decision 01 is now two short sentences including its trade-off; the other decisions already meet the one/two-sentence target.
 
 Outcome uses subgrid to guarantee a shared values row and description baseline, with equal columns and 24px gutters. Reflection gains 16px of separation (176px desktop/tablet, 144px mobile). Added one short black rule beside the hero identifier and one 24px vertical closing rule at Reflection. The single existing yellow Outcome square remains. These accents are static, and nonessential shapes/hero rule are hidden on mobile. No new image treatment, motion or navigation logic.
+
+## Grid-integrated geometric framing
+
+The hero circle and square share a vertical black rule and a common left edge. Local size tokens derive from existing spacing tokens: circle 192px / square 64px at desktop, 160px / 48px at tablet. Product imagery and content flow remain unchanged. The middle chapters have no decorative markers.
+
+Outcome retains only a small yellow square anchored to its top structural rule. Reflection uses a 96px blue half-circle attached to a 128px vertical rule at the far-right edge, outside the reading column. Its existing 176px desktop separation remains. The previous floating Outcome circle and red closing square are removed.
+
+Geometry is static, pointer-inert, and hidden from assistive technology. Large geometry is hidden below 1024px and in print. Verified Home, About, and case study at 1280, 1024, 768, and 390px without horizontal overflow. Case-study scrollspy still selects the closing chapter correctly.

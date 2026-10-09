@@ -85,3 +85,39 @@
   .reckitt-case #reflection::before { content: ''; position: absolute; inset-inline-start: calc(-1 * var(--space-4)); inset-block-start: 0; height: var(--space-6); border-inline-start: var(--rule-strong); }
 }
 @media (max-width: 47.999rem) { .case-hero > .case-label::after, .reckitt-case #outcome::before { display: none; } }
+
+/* Geometry attaches to the hero grid and closing rule, never to product imagery. */
+.case-hero { position: relative; }
+.case-hero > .case-label::after { display: none; }
+.case-hero-orbit, .case-hero-square { display: none; position: absolute; pointer-events: none; }
+.reckitt-case #reflection::before { display: none; }
+.reckitt-case #outcome::before { inset-block-start: 0; }
+@media (min-width: 64rem) {
+  .reckitt-case { --case-orbit-size: calc(var(--space-32) + var(--space-8)); --case-square-size: var(--space-12); }
+  .case-hero-orbit {
+    display: block; overflow: hidden; inset-block-start: var(--space-16); inset-inline-end: 0;
+    width: calc(var(--case-orbit-size) - var(--space-12)); height: var(--case-orbit-size);
+    border-inline-start: var(--rule-strong);
+  }
+  .case-hero-orbit::before { content: ''; display: block; width: var(--case-orbit-size); height: var(--case-orbit-size); border-radius: 50%; background: var(--case-accent); }
+  .case-hero-square {
+    display: block; width: var(--case-square-size); height: var(--case-square-size);
+    inset-block-start: calc(var(--space-16) + var(--case-orbit-size));
+    inset-inline-end: calc(var(--case-orbit-size) - var(--space-12) - var(--case-square-size)); background: var(--color-blue);
+  }
+  .reckitt-case #reflection::before {
+    content: ''; display: block; position: absolute; inset-inline-start: auto; inset-inline-end: var(--space-12);
+    inset-block-start: 0; height: var(--space-32); border-inline-start: var(--rule-strong); pointer-events: none;
+  }
+  .reckitt-case #reflection::after {
+    content: ''; position: absolute; inset-inline-end: 0; inset-block-start: var(--space-8);
+    width: var(--space-12); height: var(--space-24); border-radius: 0 var(--space-24) var(--space-24) 0;
+    background: var(--color-blue); pointer-events: none;
+  }
+}
+@media (min-width: 80rem) {
+  .reckitt-case { --case-orbit-size: calc(var(--space-32) + var(--space-16)); --case-square-size: var(--space-16); }
+}
+@media print {
+  .case-hero-orbit, .case-hero-square, .reckitt-case #reflection::before, .reckitt-case #reflection::after { display: none; }
+}

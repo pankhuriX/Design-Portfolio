@@ -36,7 +36,7 @@
 /* Ambient motion is a separate translate channel from pointer transforms.
    Forty slow-duration tokens = 12.8s; total offsets stay within 12 / 8 / 4px. */
 .hero { --hero-drift-duration: calc(var(--motion-slow) * 40); }
-.hero-signature { margin-inline-end: auto; font-size: var(--text-micro); line-height: var(--leading-micro); letter-spacing: var(--tracking-micro); color: var(--color-text-muted); }
+.hero-signature { position: relative; padding-inline-start: var(--space-6); margin-inline-end: auto; font-size: var(--text-label); line-height: var(--leading-label); letter-spacing: var(--tracking-micro); color: var(--color-text-muted); }
 .hero-motion-pause { position: absolute; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; }
 .hero-motion-pause:focus-visible { clip-path: none; width: auto; height: auto; inset-inline-start: var(--page-padding); inset-block-end: var(--space-16); background: var(--color-canvas); color: var(--color-ink); border: var(--rule-strong); padding: var(--space-3); font: inherit; min-height: var(--touch-target); z-index: 1; }
 .hero-intro .text-link { position: relative; border-bottom-color: transparent; }
@@ -52,3 +52,5 @@
   .hero[data-motion-paused] .hero-plane, .hero[data-motion-paused] .hero-square, .hero[data-motion-paused] .hero-bottom::after { transform: none; }
 }
 @media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) { .hero-motion-pause { display: none; } }
+
+.hero-signature::before { content: ""; position: absolute; inset-inline-start: 0; inset-block-start: var(--space-1); width: var(--space-3); height: var(--space-3); border-radius: 50%; background: var(--color-yellow); }
